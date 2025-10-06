@@ -1,0 +1,22 @@
+{
+  "name": "prova-back",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cls && nodemon server.js"
+  },
+  "keywords": [
+    "api",
+    "backend"
+  ],
+  "author": "Vinicius Bertunho",
+  "license": "MIT",
+  "description": "api funko pop para a prova de back end SENAI-Valinhos",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
