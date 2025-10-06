@@ -1,0 +1,169 @@
+const funkos = [
+  {
+    id: 1,
+    personagem: "Goku (Super Saiyan)",
+    franquia: "Dragon Ball Z",
+    numero: 14,
+    raridade: "Comum",
+    condicao: "Mint", // Estado perfeito
+    preco: 120.50,
+    dataAquisicao: "2024-03-15",
+    edicaoEspecial: false
+  },
+  {
+    id: 2,
+    personagem: "Batman (1989)",
+    franquia: "DC Comics",
+    numero: 144,
+    raridade: "Raro",
+    condicao: "Mint", // Estado perfeito
+    preco: 280.00,
+    dataAquisicao: "2023-11-20",
+    edicaoEspecial: true
+  },
+  {
+    id: 3,
+    personagem: "Iron Man (I Am Iron Man)",
+    franquia: "Marvel",
+    numero: 580,
+    raridade: "Exclusivo (Glow in the Dark)",
+    condicao: "Boa", // Pode ter mínimos detalhes
+    preco: 350.00,
+    dataAquisicao: "2025-01-10",
+    edicaoEspecial: true
+  },
+  {
+    id: 4,
+    personagem: "Darth Vader (Chrome)",
+    franquia: "Star Wars",
+    numero: 157,
+    raridade: "Exclusivo (Comic-Con)",
+    condicao: "Mint",
+    preco: 850.75,
+    dataAquisicao: "2024-08-01",
+    edicaoEspecial: true
+  },
+  {
+    id: 5,
+    personagem: "Harry Potter (com a Espada da Grifinória)",
+    franquia: "Harry Potter",
+    numero: 149,
+    raridade: "Exclusivo",
+    condicao: "Boa",
+    preco: 210.00,
+    dataAquisicao: "2025-04-22",
+    edicaoEspecial: true
+  },
+  {
+    id: 6,
+    personagem: "Wanda Maximoff (Scarlet Witch)",
+    franquia: "Marvel",
+    numero: 823,
+    raridade: "Comum",
+    condicao: "Mint",
+    preco: 135.00,
+    dataAquisicao: "2024-09-05",
+    edicaoEspecial: false
+  },
+  {
+    id: 7,
+    personagem: "Naruto Uzumaki (Sage Mode)",
+    franquia: "Naruto Shippuden",
+    numero: 185,
+    raridade: "Exclusivo",
+    condicao: "Regular", // Desgaste visível
+    preco: 450.00,
+    dataAquisicao: "2023-05-30",
+    edicaoEspecial: true
+  },
+  {
+    id: 8,
+    personagem: "Grogu (The Child)",
+    franquia: "The Mandalorian",
+    numero: 368,
+    raridade: "Comum",
+    condicao: "Mint",
+    preco: 140.90,
+    dataAquisicao: "2025-07-18",
+    edicaoEspecial: false
+  },
+  {
+    id: 9,
+    personagem: "The Joker (The Dark Knight)",
+    franquia: "DC Comics",
+    numero: 36,
+    raridade: "Vaulted (Aposentado)",
+    condicao: "Boa",
+    preco: 950.00,
+    dataAquisicao: "2024-11-11",
+    edicaoEspecial: true
+  },
+  {
+    id: 10,
+    personagem: "Eren Yeager",
+    franquia: "Attack on Titan",
+    numero: 20,
+    raridade: "Comum",
+    condicao: "Danificada", // Caixa ou boneco com dano
+    preco: 75.00,
+    dataAquisicao: "2025-02-09",
+    edicaoEspecial: false
+  },
+  {
+    id: 11,
+    personagem: "Stitch (Flocked)",
+    franquia: "Lilo & Stitch",
+    numero: 159,
+    raridade: "Chase",
+    condicao: "Mint",
+    preco: 620.00,
+    dataAquisicao: "2024-06-14",
+    edicaoEspecial: true
+  },
+  {
+    id: 12,
+    personagem: "Spider-Man (Integrated Suit)",
+    franquia: "Marvel",
+    numero: 1162,
+    raridade: "Comum",
+    condicao: "Boa",
+    preco: 129.99,
+    dataAquisicao: "2025-08-30",
+    edicaoEspecial: false
+  },
+  {
+    id: 13,
+    personagem: "Hermione Granger (Yule Ball)",
+    franquia: "Harry Potter",
+    numero: 11,
+    raridade: "Comum",
+    condicao: "Regular",
+    preco: 90.00,
+    dataAquisicao: "2023-10-02",
+    edicaoEspecial: false
+  },
+  {
+    id: 14,
+    personagem: "Captain America (Endgame)",
+    franquia: "Marvel",
+    numero: 450,
+    raridade: "Exclusivo",
+    condicao: "Mint",
+    preco: 310.00,
+    dataAquisicao: "2025-05-20",
+    edicaoEspecial: true
+  },
+  {
+    id: 15,
+    personagem: "Homer Simpson",
+    franquia: "The Simpsons",
+    numero: 1,
+    raridade: "Comum",
+    condicao: "Boa",
+    preco: 110.00,
+    dataAquisicao: "2022-07-25",
+    edicaoEspecial: false
+  }
+];
+
+export default {  funkos  }
