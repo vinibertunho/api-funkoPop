@@ -33,7 +33,6 @@ const getAllFunkos = (req, res) => {
     data: resultado,
     total: resultado.length,
     timestamp: new Date(),
-    
   });
 };
 
@@ -221,7 +220,8 @@ const updateFunkos = (req, res) => {
           ...(raridade && { raridade }),
           ...(condicao && { condicao }),
           ...(preco && { preco }),
-          ...(dataAquisicao && new Date(dataAquisicao) >= new Date() && { dataAquisicao }),
+          ...(dataAquisicao &&
+            new Date(dataAquisicao) >= new Date() && { dataAquisicao }),
           ...(edicaoEspecial !== undefined && { edicaoEspecial }),
         }
       : funko

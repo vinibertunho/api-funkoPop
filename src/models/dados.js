@@ -6,9 +6,9 @@ const funkos = [
     numero: 14,
     raridade: "Comum",
     condicao: "Mint", // Estado perfeito
-    preco: 120.50,
+    preco: 120.5,
     dataAquisicao: "2024-03-15",
-    edicaoEspecial: false
+    edicaoEspecial: false,
   },
   {
     id: 2,
@@ -17,9 +17,9 @@ const funkos = [
     numero: 144,
     raridade: "Raro",
     condicao: "Mint", // Estado perfeito
-    preco: 280.00,
+    preco: 280.0,
     dataAquisicao: "2023-11-20",
-    edicaoEspecial: true
+    edicaoEspecial: true,
   },
   {
     id: 3,
@@ -28,9 +28,9 @@ const funkos = [
     numero: 580,
     raridade: "Exclusivo (Glow in the Dark)",
     condicao: "Boa", // Pode ter mínimos detalhes
-    preco: 350.00,
+    preco: 350.0,
     dataAquisicao: "2025-01-10",
-    edicaoEspecial: true
+    edicaoEspecial: true,
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const funkos = [
     condicao: "Mint",
     preco: 850.75,
     dataAquisicao: "2024-08-01",
-    edicaoEspecial: true
+    edicaoEspecial: true,
   },
   {
     id: 5,
@@ -50,9 +50,9 @@ const funkos = [
     numero: 149,
     raridade: "Exclusivo",
     condicao: "Boa",
-    preco: 210.00,
+    preco: 210.0,
     dataAquisicao: "2025-04-22",
-    edicaoEspecial: true
+    edicaoEspecial: true,
   },
   {
     id: 6,
@@ -61,9 +61,9 @@ const funkos = [
     numero: 823,
     raridade: "Comum",
     condicao: "Mint",
-    preco: 135.00,
+    preco: 135.0,
     dataAquisicao: "2024-09-05",
-    edicaoEspecial: false
+    edicaoEspecial: false,
   },
   {
     id: 7,
@@ -72,9 +72,9 @@ const funkos = [
     numero: 185,
     raridade: "Exclusivo",
     condicao: "Regular", // Desgaste visível
-    preco: 450.00,
+    preco: 450.0,
     dataAquisicao: "2023-05-30",
-    edicaoEspecial: true
+    edicaoEspecial: true,
   },
   {
     id: 8,
@@ -83,9 +83,9 @@ const funkos = [
     numero: 368,
     raridade: "Comum",
     condicao: "Mint",
-    preco: 140.90,
+    preco: 140.9,
     dataAquisicao: "2025-07-18",
-    edicaoEspecial: false
+    edicaoEspecial: false,
   },
   {
     id: 9,
@@ -94,9 +94,9 @@ const funkos = [
     numero: 36,
     raridade: "Vaulted (Aposentado)",
     condicao: "Boa",
-    preco: 950.00,
+    preco: 950.0,
     dataAquisicao: "2024-11-11",
-    edicaoEspecial: true
+    edicaoEspecial: true,
   },
   {
     id: 10,
@@ -105,9 +105,9 @@ const funkos = [
     numero: 20,
     raridade: "Comum",
     condicao: "Danificada", // Caixa ou boneco com dano
-    preco: 75.00,
+    preco: 75.0,
     dataAquisicao: "2025-02-09",
-    edicaoEspecial: false
+    edicaoEspecial: false,
   },
   {
     id: 11,
@@ -116,9 +116,9 @@ const funkos = [
     numero: 159,
     raridade: "Chase",
     condicao: "Mint",
-    preco: 620.00,
+    preco: 620.0,
     dataAquisicao: "2024-06-14",
-    edicaoEspecial: true
+    edicaoEspecial: true,
   },
   {
     id: 12,
@@ -129,7 +129,7 @@ const funkos = [
     condicao: "Boa",
     preco: 129.99,
     dataAquisicao: "2025-08-30",
-    edicaoEspecial: false
+    edicaoEspecial: false,
   },
   {
     id: 13,
@@ -138,9 +138,9 @@ const funkos = [
     numero: 11,
     raridade: "Comum",
     condicao: "Regular",
-    preco: 90.00,
+    preco: 90.0,
     dataAquisicao: "2023-10-02",
-    edicaoEspecial: false
+    edicaoEspecial: false,
   },
   {
     id: 14,
@@ -149,9 +149,9 @@ const funkos = [
     numero: 450,
     raridade: "Exclusivo",
     condicao: "Mint",
-    preco: 310.00,
+    preco: 310.0,
     dataAquisicao: "2025-05-20",
-    edicaoEspecial: true
+    edicaoEspecial: true,
   },
   {
     id: 15,
@@ -160,10 +160,10 @@ const funkos = [
     numero: 1,
     raridade: "Comum",
     condicao: "Boa",
-    preco: 110.00,
+    preco: 110.0,
     dataAquisicao: "2022-07-25",
-    edicaoEspecial: false
-  }
+    edicaoEspecial: false,
+  },
 ];
 
-export default {  funkos  }
+export default { funkos };
