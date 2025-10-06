@@ -91,12 +91,12 @@ const createFunko = (req, res) => {
     dataAquisicao: new Date(),
     edicaoEspecial: req.body.edicaoEspecial || false,
   };
-  funkos.push(novoFunko);
+  funkos.push(newFunko);
   return res.status(201).json({
     status: "201",
     success: true,
     mensagem: "Novo Funko Pop! adicionado com sucesso",
-    data: novoFunko,
+    data: newFunko,
     timestamp: new Date(),
   });
 };
