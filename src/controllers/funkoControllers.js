@@ -54,4 +54,4 @@ const getById = (req, res) => {
     }
 };
 
-export { getAllFunkos };
+export { getAllFunkos, getById };
