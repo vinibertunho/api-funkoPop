@@ -2,7 +2,7 @@ import dados from "../models/dados.js";
 const { funkos } = dados;
 
 const getAllFunkos = (req, res) => {
-    const { franquia, raridade, condicao, edicaoEspeial } = req.query;
+    const { franquia, raridade, condicao, edicaoEspecial } = req.query;
     let resultado = funkos;
 
     if (franquia) {
@@ -19,9 +19,9 @@ const getAllFunkos = (req, res) => {
         resultado = resultado.filter(
             (c) => c.condicao.toLowerCase() === condicao.toLowerCase()
         );
-    } if (edicaoEspeial) {
+    } if (edicaoEspecial) {
         resultado = resultado.filter(
-            (es) => es.edicaoEspeial === (edicaoEspeial === "true")
+            (es) => es.edicaoEspecial === (edicaoEspecial === "true")
         );
     }
 
@@ -33,5 +33,7 @@ const getAllFunkos = (req, res) => {
         total: resultado.length,
     });
 };
+
+
 
 export { getAllFunkos };
