@@ -34,6 +34,24 @@ const getAllFunkos = (req, res) => {
     });
 };
 
-
+const getById = (req, res) => {
+    const id = parseInt(req.params.id);
+    const funkoEncontrado = funkos.find((f) => f.id === id);
+    if (!funkoEncontrado) {
+        return res.status(404).json({
+            status: "404",
+            success: false,
+            mensagem: "Funko Pop! não encontrado",
+            data: null,
+        });
+    } else {
+        return res.status(200).json({
+            status: "200",
+            success: true,
+            mensagem: "Funko Pop! encontrado com sucesso",
+            data: funkoEncontrado,
+        });
+    }
+};
 
 export { getAllFunkos };
