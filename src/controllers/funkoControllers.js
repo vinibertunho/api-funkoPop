@@ -32,6 +32,8 @@ const getAllFunkos = (req, res) => {
     mensagem: "Lista de Funkos Pop! retornada com sucesso",
     data: resultado,
     total: resultado.length,
+    timestamp: new Date(),
+    
   });
 };
 
@@ -44,6 +46,7 @@ const getById = (req, res) => {
       success: false,
       mensagem: "Funko Pop! não encontrado",
       data: null,
+      timestamp: new Date(),
     });
   } else {
     return res.status(200).json({
@@ -51,6 +54,7 @@ const getById = (req, res) => {
       success: true,
       mensagem: "Funko Pop! encontrado com sucesso",
       data: funkoEncontrado,
+      timestamp: new Date(),
     });
   }
 };
@@ -84,7 +88,7 @@ const createFunko = (req, res) => {
     raridade: req.body.raridade,
     condicao: req.body.condicao,
     preco: req.body.preco,
-    dataAquisicao: req.body.dataAquisicao,
+    dataAquisicao: new Date(),
     edicaoEspecial: req.body.edicaoEspecial || false,
   };
   funkos.push(novoFunko);
@@ -93,9 +97,147 @@ const createFunko = (req, res) => {
     success: true,
     mensagem: "Novo Funko Pop! adicionado com sucesso",
     data: novoFunko,
+    timestamp: new Date(),
   });
 };
 
-d
+const deleteFunko = (req, res) => {
+  const id = parseInt(req.params.id);
 
-export { getAllFunkos, getById, createFunko };
+  if (isNaN(id)) {
+    return res.status(400).json({
+      status: "400",
+      success: false,
+      mensagem: "ID inválido. Deve ser um número.",
+      data: null,
+      timestamp: new Date(),
+    });
+  }
+  const funkoParaDeletar = funkos.find((f) => f.id === id);
+  if (!funkoParaDeletar) {
+    return res.status(404).json({
+      status: "404",
+      success: false,
+      mensagem: "Funko Pop! não encontrado",
+      data: null,
+      timestamp: new Date(),
+    });
+  }
+  const funkoFiltrado = funkos.filter((f) => f.id !== id);
+
+  funkos.splice(0, funkos.length, ...funkoFiltrado);
+  return res.status(200).json({
+    status: "200",
+    success: true,
+    mensagem: "Funko Pop! deletado com sucesso",
+    data: funkoParaDeletar,
+    timestamp: new Date(),
+  });
+};
+
+const updateFunkos = (req, res) => {
+  const { id } = req.params;
+  const {
+    personagem,
+    franquia,
+    numero,
+    raridade,
+    condicao,
+    preco,
+    dataAquisicao,
+    edicaoEspecial,
+  } = req.body;
+
+  const raridadesOficiais = ["Comum", "Exclusivo", "Chase", "Raro"];
+  const condicoesValidas = ["Mint", "Boa", "Regular", "Danificada"];
+
+  // valida ID
+  if (isNaN(id)) {
+    return res.status(400).json({
+      status: 400,
+      success: false,
+      message: "ID inválido. O ID deve ser um número.",
+      error: "INVALID_ID",
+      timestamp: new Date(),
+    });
+  }
+
+  const idParaEditar = parseInt(id);
+  const funkoExistente = funkos.find((f) => f.id === idParaEditar);
+
+  if (!funkoExistente) {
+    return res.status(404).json({
+      status: 404,
+      success: false,
+      message: "Funko com ID não encontrado",
+      error: "FUNKO_NOT_FOUND",
+      suggestions: [
+        "Verifique se o Funko está registrado",
+        "Cheque se o ID informado está correto",
+      ],
+      timestamp: new Date(),
+    });
+  }
+
+  if (numero && numero <= 0) {
+    return res.status(400).json({
+      status: 400,
+      success: false,
+      message: "O número do Funko deve ser maior que 0",
+      error: "INVALID_NUMBER",
+      timestamp: new Date(),
+    });
+  }
+
+  if (raridade && !raridadesOficiais.includes(raridade)) {
+    return res.status(400).json({
+      status: 400,
+      success: false,
+      message:
+        "Raridade inválida. Valores permitidos: Comum, Exclusivo, Chase ou Raro.",
+      error: "INVALID_RARITY",
+      timestamp: new Date(),
+    });
+  }
+
+  if (condicao && !condicoesValidas.includes(condicao)) {
+    return res.status(400).json({
+      status: 400,
+      success: false,
+      message:
+        "Condição inválida. Valores permitidos: Mint, Boa, Regular ou Danificada.",
+      error: "INVALID_CONDITION",
+      timestamp: new Date(),
+    });
+  }
+
+  const funkosAtualizados = funkos.map((funko) =>
+    funko.id === idParaEditar
+      ? {
+          ...funko,
+          ...(personagem && { personagem }),
+          ...(franquia && { franquia }),
+          ...(numero && { numero }),
+          ...(raridade && { raridade }),
+          ...(condicao && { condicao }),
+          ...(preco && { preco }),
+          ...(dataAquisicao && new Date(dataAquisicao) >= new Date() && { dataAquisicao }),
+          ...(edicaoEspecial !== undefined && { edicaoEspecial }),
+        }
+      : funko
+  );
+
+  funkos.splice(0, funkos.length, ...funkosAtualizados);
+
+  const funkoAtualizado = funkos.find((f) => f.id === idParaEditar);
+
+  return res.status(200).json({
+    status: 200,
+    success: true,
+    message: "Funko atualizado com sucesso",
+    data: funkoAtualizado,
+    timestamp: new Date(),
+  });
+};
+
+export { getAllFunkos, getById, createFunko, deleteFunko, updateFunkos };
