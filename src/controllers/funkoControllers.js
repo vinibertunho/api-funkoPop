@@ -1,11 +1,37 @@
 import dados from "../models/dados.js";
-const {  funkos  } = dados;
+const { funkos } = dados;
 
 const getAllFunkos = (req, res) => {
-    const {  franquia, raridade, condicao, edicaoEspeial  } = req.query
+    const { franquia, raridade, condicao, edicaoEspeial } = req.query;
     let resultado = funkos;
 
     if (franquia) {
-        resultado = resultado.filter((f) => f.franquia.toLowerCase().includes(franquia.toLowerCase()))
+        resultado = resultado.filter((f) =>
+            f.franquia.toLowerCase().includes(franquia.toLowerCase())
+        );
     }
-}
+    if (raridade) {
+        resultado = resultado.filter((r) =>
+            r.raridade.toLowerCase().includes(raridade.toLowerCase())
+        );
+    }
+    if (condicao) {
+        resultado = resultado.filter(
+            (c) => c.condicao.toLowerCase() === condicao.toLowerCase()
+        );
+    } if (edicaoEspeial) {
+        resultado = resultado.filter(
+            (es) => es.edicaoEspeial === (edicaoEspeial === "true")
+        );
+    }
+
+    res.status(200).json({
+        status: "200",
+        success: true,
+        mensagem: "Lista de Funkos Pop! retornada com sucesso",
+        data: resultado,
+        total: resultado.length,
+    });
+};
+
+export { getAllFunkos };

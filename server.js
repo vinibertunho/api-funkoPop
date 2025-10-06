@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import funkosRoutes from "./src/routes/funkosRoutes.js"
 
 const app = express();
 app.use(express.json());
@@ -12,6 +13,11 @@ app.get("/", (req, res) => {
 });
 
 
+app.use("/funkos", funkosRoutes)
+
 app.listen(serverPort, () => {
     console.log(`servidor rodando em http://localhost:${serverPort}`);
 });
+
+
+
